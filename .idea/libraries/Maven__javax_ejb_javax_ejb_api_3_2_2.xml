@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="Maven: javax.ejb:javax.ejb-api:3.2.2">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/javax/ejb/javax.ejb-api/3.2.2/javax.ejb-api-3.2.2.jar!/" />
+      <root url="file://C:/Program Files/Apache Software Foundation/Tomcat 9.0/lib" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/javax/ejb/javax.ejb-api/3.2.2/javax.ejb-api-3.2.2-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/javax/ejb/javax.ejb-api/3.2.2/javax.ejb-api-3.2.2-sources.jar!/" />
+    </SOURCES>
+    <jarDirectory url="file://C:/Program Files/Apache Software Foundation/Tomcat 9.0/lib" recursive="false" />
+  </library>
+</component>

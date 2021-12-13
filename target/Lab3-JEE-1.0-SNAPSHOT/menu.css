@@ -1,0 +1,46 @@
+.topbar
+{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: darkslategray ;
+    text-align: center;
+
+
+
+}
+
+.topbar li {float: left}
+
+.topbar li a
+{
+    display: block;
+    width: 100px;
+    color: darkseagreen;
+    padding: 15px;
+    text-decoration: none;
+}
+
+.serv
+{
+    text-align: left;
+    border-color: darkseagreen;
+}
+.bottom a
+{
+    text-decoration: none;
+    color: darkslategray;
+
+}
+.bottom li
+{
+    list-style-type: none;
+    padding: 15px;
+}
+
+*
+{
+   font-family: "Century Gothic", serif;
+}
+
