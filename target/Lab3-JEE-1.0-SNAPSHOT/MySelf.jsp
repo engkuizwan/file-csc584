@@ -20,7 +20,7 @@
 
 <jsp:include page="MySelfServlet"/>
 
-<form style="text-align: center" name="MyselfForm" method="post" action="MySelf.jsp">
+<form style="text-align: center" name="MyselfForm" method="post" action="myselfmessage.jsp">
 
     <br/>
     <br/>
@@ -37,9 +37,20 @@
 
 </form>
 
-<c:forEach var="i" begin="1" end="5">
-    <c:out value="berjaya install"/>
-</c:forEach> 
+
+
+<%-- message to user --%>
+<c:if test="${not empty param.serrmsg}">
+
+    <c:out value="${param.serrmsg}"/>
+
+</c:if>
+
+<c:if test="${not empty param.sscssmsg}">
+
+    <c:out value="${param.sscssmsg}"/>
+
+</c:if>
 
 
 <%--JSP Declaration--%>
