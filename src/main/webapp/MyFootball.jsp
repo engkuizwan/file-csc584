@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: User
@@ -18,7 +19,7 @@
 </h1>
 <jsp:include page="/MyFootballServlet"/>
 
-<form name="footballForm" method="post" action="MyFootball.jsp">
+<form name="footballForm" method="post" action="myfootballdb.jsp">
 
     Favourite Team : <input type="text" name="myTeam"><br/><br/>
     Favourite Coach : <input type="text" name="myCoach"><br/><br/>
@@ -29,6 +30,21 @@
     <input type="submit" value="submit">
 
 </form>
+
+<c:if test="${not empty param.errmsg}">
+
+    <c:out value="${param.errmsg}"/>
+
+</c:if>
+
+<c:if test="${not empty param.scssmsg}">
+
+    <c:out value="${param.scssmsg}"/>
+
+</c:if>
+
+
+
 
 
 <%--JSP Declaration--%>
