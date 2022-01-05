@@ -37,7 +37,9 @@
 
 </form>
 
-
+<c:forEach var="i" begin="1" end="5">
+    <c:out value="berjaya install"/>
+</c:forEach> 
 
 
 <%--JSP Declaration--%>
