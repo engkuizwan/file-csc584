@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <title>My Self</title>
@@ -19,7 +20,7 @@
 
 <jsp:include page="MySelfServlet"/>
 
-<form style="text-align: center" name="MyselfForm" method="post" action="MySelf.jsp">
+<form style="text-align: center" name="MyselfForm" method="post" action="myselfmessage.jsp">
 
     <br/>
     <br/>
@@ -37,6 +38,19 @@
 </form>
 
 
+
+<%-- message to user --%>
+<c:if test="${not empty param.serrmsg}">
+
+    <c:out value="${param.serrmsg}"/>
+
+</c:if>
+
+<c:if test="${not empty param.sscssmsg}">
+
+    <c:out value="${param.sscssmsg}"/>
+
+</c:if>
 
 
 <%--JSP Declaration--%>
