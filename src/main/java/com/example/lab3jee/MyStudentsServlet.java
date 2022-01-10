@@ -15,6 +15,7 @@ public class MyStudentsServlet extends HttpServlet
         PrintWriter out = response.getWriter();
         HttpSession session = request.getSession();
 
+        String id = "123";
         String myname = (String) session.getAttribute("MyName");
         String myage = (String) session.getAttribute("MyAge");
         String myhobbies = (String) session.getAttribute("MyHobbies");
@@ -27,7 +28,7 @@ public class MyStudentsServlet extends HttpServlet
         /*MyStudents mystudents = new MyStudents("Engku Muhammad izwan Bin Engku muda", "22", "Football" ,
                 "UiTM Cawangan Melaka Kampus Jasin", "2021118985", "CS266");*/
 
-        MyStudents mystudents = new MyStudents(myname, myage, myhobbies, mycampus, mymatric, myprogramcode);
+        MyStudents mystudents = new MyStudents(id,myname, myage, myhobbies, mycampus, mymatric, myprogramcode);
 
 
 

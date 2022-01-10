@@ -6,9 +6,9 @@ public class MyFamily extends MySelf implements MyVehicle
     public String MyMom;
     public String MySiblings;
 
-    public MyFamily(String MyName, String MyAge, String MyHobbies, String MyDad, String MyMom, String MySiblings )
+    public MyFamily(String id, String MyName, String MyAge, String MyHobbies, String MyDad, String MyMom, String MySiblings )
     {
-        super(MyName, MyAge, MyHobbies);
+        super(id,MyName, MyAge, MyHobbies);
         this.MyDad = MyDad;
         this.MyMom = MyMom;
         this.MySiblings = MySiblings;

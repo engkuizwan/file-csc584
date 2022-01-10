@@ -8,9 +8,9 @@ import java.sql.SQLException;
 
 public class registerjdbc
 {
-    private String dbUrl = "jdbc:mysql://localhost:3306/lab584";
-    private String dbUname = "root";
-    private String dbPassword = "";
+    private String dbUrl = "jdbc:mysql://us-cdbr-east-05.cleardb.net:3306/heroku_2c2129cf1be5740";
+    private String dbUname = "b3c003ae765976";
+    private String dbPassword = "99b501e8";
     private String dbDriver = "com.mysql.cj.jdbc.Driver";
 
     public void loadDriver(String dbDriver)
@@ -41,14 +41,16 @@ public class registerjdbc
         loadDriver(dbDriver);
         Connection con = getConnection();
         String result = "Data entered successfully";
-        String sql = "insert into user values(?,?,?)";
+        String sql = "insert into user values(?,?,?,?)";
 
         PreparedStatement ps;
         try {
             ps = con.prepareStatement(sql);
-            ps.setString(1, mySelf.getMyName());
-            ps.setString(2, mySelf.getMyAge());
-            ps.setString(3, mySelf.getMyHobbies());
+            ps.setString(1, mySelf.getId());
+            ps.setString(2, mySelf.getMyName());
+            ps.setString(3, mySelf.getMyAge());
+            ps.setString(4, mySelf.getMyHobbies());
+
             ps.executeUpdate();
         } catch (SQLException e) {
             // TODO Auto-generated catch block

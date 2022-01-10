@@ -14,6 +14,7 @@ public class MyFamilyServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
         HttpSession session = request.getSession();
 
+        String id = "123";
         String myname = (String) session.getAttribute("MyName");
         String myage = (String) session.getAttribute("MyAge");
         String myhobbies = (String) session.getAttribute("MyHobbies");
@@ -25,7 +26,7 @@ public class MyFamilyServlet extends HttpServlet {
         /*MyFamily myfamily = new MyFamily("Engku Muhammad Izwan Bin Engku Muda", "22", "Football",
                 "Engku Muda Bin Engku Musa", "Asiah Binti Mohd Rusad", "Engku Muhammad Ilham Bin Engku Muda");*/
 
-        MyFamily myfamily = new MyFamily(myname, myage, myhobbies, myDad, myMom, mySibling);
+        MyFamily myfamily = new MyFamily(id, myname, myage, myhobbies, myDad, myMom, mySibling);
 
         out.println("<html><body style=\"text-align: center\">");
         out.println("<div style=\"font-family: 'Century Gothic', serif\" style=\"border: cadetblue\">");

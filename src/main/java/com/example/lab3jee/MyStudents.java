@@ -6,8 +6,8 @@ public class MyStudents extends MySelf implements MyVehicle
     public String MyProgramCode;
     public String MyCampus;
 
-    public MyStudents(String myName, String myAge, String myHobbies, String myMatricNo, String myProgramCode, String myCampus) {
-        super(myName, myAge, myHobbies);
+    public MyStudents(String id, String myName, String myAge, String myHobbies, String myMatricNo, String myProgramCode, String myCampus) {
+        super(id,myName, myAge, myHobbies);
         MyMatricNo = myMatricNo;
         MyProgramCode = myProgramCode;
         MyCampus = myCampus;

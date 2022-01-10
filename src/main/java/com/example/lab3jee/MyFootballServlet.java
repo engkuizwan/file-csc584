@@ -14,6 +14,7 @@ public class MyFootballServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
         HttpSession session = request.getSession();
 
+        String id = "123";
         String myname = (String) session.getAttribute("MyName");
         String myage = (String) session.getAttribute("MyAge");
         String myhobbies = (String) session.getAttribute("MyHobbies");
@@ -27,7 +28,7 @@ public class MyFootballServlet extends HttpServlet {
                 "Manchester United", "Pep Guardiola", "Cristiano Ronaldo", "4-3-3",
                 "Ring Winger/Flanker");*/
 
-        MyFootball myfootball = new MyFootball(myname, myage, myhobbies, myTeam, myCoach, myPlayer, myFormation, myPosition);
+        MyFootball myfootball = new MyFootball(id, myname, myage, myhobbies, myTeam, myCoach, myPlayer, myFormation, myPosition);
 
 
         out.println("<html><body style=\"text-align: center\">");

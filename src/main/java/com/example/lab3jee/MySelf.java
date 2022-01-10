@@ -2,34 +2,44 @@ package com.example.lab3jee;
 
 public class MySelf implements MyVehicle
 {
+    public String id;
     public String MyName;
     public String MyAge;
     public String MyHobbies;
 
-    public MySelf(String myName, String myAge, String myHobbies) {
+    public MySelf(String id, String myName, String myAge, String myHobbies) {
+        this.id = id;
         MyName = myName;
         MyAge = myAge;
         MyHobbies = myHobbies;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getMyName() {
         return MyName;
     }
 
-    public String getMyAge() {
-        return MyAge;
-    }
-
-    public String getMyHobbies() {
-        return MyHobbies;
-    }
-
     public void setMyName(String myName) {
         MyName = myName;
     }
 
+    public String getMyAge() {
+        return MyAge;
+    }
+
     public void setMyAge(String myAge) {
         MyAge = myAge;
+    }
+
+    public String getMyHobbies() {
+        return MyHobbies;
     }
 
     public void setMyHobbies(String myHobbies) {

@@ -8,6 +8,7 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.*;
+import java.util.UUID;
 
 @WebServlet(name = "MySelfServlet", value = "/MySelfServlet")
 public class MySelfServlet extends HttpServlet {
@@ -17,12 +18,13 @@ public class MySelfServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
         HttpSession session = request.getSession();
 
+        String id = "123";
         String myname = (String) session.getAttribute("MyName");
         String myage = (String) session.getAttribute("MyAge");
         String myhobbies = (String) session.getAttribute("MyHobbies");
 
 //        MySelf myself = new MySelf("Engku" , 22 , "Football");
-        MySelf myself = new MySelf(myname, myage, myhobbies);
+        MySelf myself = new MySelf(id, myname, myage, myhobbies);
 
         out.println("<html><body style=\"text-align: center\">");
         out.println("<div style=\"font-family: 'Century Gothic', serif\" style=\"border: cadetblue\">");
@@ -53,9 +55,9 @@ public class MySelfServlet extends HttpServlet {
         try
         {
             Class.forName("com.mysql.jdbc.Driver");
-            String dbURL = "jdbc:mysql://localhost:3306/lab584";
-            String user = "root";
-            String pass = "";
+            String dbURL = "jdbc:mysql://us-cdbr-east-05.cleardb.net:3306/heroku_2c2129cf1be5740";
+            String user = "b3c003ae765976";
+            String pass = "99b501e8";
 
             Connection conn = DriverManager.getConnection(dbURL, user, pass);
 
@@ -74,6 +76,7 @@ public class MySelfServlet extends HttpServlet {
 
                 while (res.next())
                 {
+                    out.println("<h1>" + "Id : " + res.getString("id") + "</h1>");
                     out.println("<h1>" + "Name : " + res.getString("name") + "</h1>");
                     out.println("<h1>" + "Age : " + res.getString("age") + "</h1>");
                     out.println("<h1>" + "Hobbies : " + res.getString("hobbies") + "</h1>");
@@ -87,14 +90,19 @@ public class MySelfServlet extends HttpServlet {
         }
     }
 
+
+
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
+        String names[] = {"1234567890", "0987654321", "werfwerwe", "xhetalkdh", "khjbwdvkw"};
+
+        String id = UUID.randomUUID().toString();
         String name = request.getParameter("myName");
         String age = request.getParameter("myAge");
         String hobbies = request.getParameter("myHobbies");
 
-        MySelf mySelf = new MySelf(name,age,hobbies);
+        MySelf mySelf = new MySelf(id,name,age,hobbies);
 
         registerjdbc rdbc = new registerjdbc();
         String result = rdbc.insert(mySelf);

@@ -8,8 +8,8 @@ public class MyFootball extends MySelf  implements MyVehicle
     public String MyFormation;
     public String MyPosition;
 
-    public MyFootball(String MyName, String MyAge, String MyHobbies, String myTeam, String myCoach, String myPlayer, String myFormation, String myPosition) {
-        super(MyName, MyAge, MyHobbies);
+    public MyFootball(String id, String MyName, String MyAge, String MyHobbies, String myTeam, String myCoach, String myPlayer, String myFormation, String myPosition) {
+        super(id, MyName, MyAge, MyHobbies);
         MyTeam = myTeam;
         MyCoach = myCoach;
         MyPlayer = myPlayer;
