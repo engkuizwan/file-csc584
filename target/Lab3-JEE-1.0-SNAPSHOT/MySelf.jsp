@@ -20,7 +20,7 @@
 
 <jsp:include page="MySelfServlet"/>
 
-<form style="text-align: center" name="MyselfForm" method="post" action="MySelf.jsp">
+<form style="text-align: center" name="MyselfForm" method="post" action="MySelfServlet">
 
     <br/>
     <br/>

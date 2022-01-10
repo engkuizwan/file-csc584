@@ -35,6 +35,8 @@ public class MySelfServlet extends HttpServlet {
 
         out.println("</div></body></html>");
 
+        response.getWriter().append("Served at: ").append(request.getContextPath());
+
         try
         {
             connectDB(out);
@@ -86,7 +88,17 @@ public class MySelfServlet extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
+    {
+        String name = request.getParameter("myName");
+        String age = request.getParameter("myAge");
+        String hobbies = request.getParameter("myHobbies");
+
+        MySelf mySelf = new MySelf(name,age,hobbies);
+
+        registerjdbc rdbc = new registerjdbc();
+        String result = rdbc.insert(mySelf);
+        response.getWriter().print(result);
 
     }
 }
