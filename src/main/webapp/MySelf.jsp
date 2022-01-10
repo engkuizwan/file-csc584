@@ -20,7 +20,7 @@
 
 <jsp:include page="MySelfServlet"/>
 
-<form style="text-align: center" name="MyselfForm" method="post" action="myselfmessage.jsp">
+<form style="text-align: center" name="MyselfForm" method="post" action="<% request.getContextPath();%>/MySelfServlet">
 
     <br/>
     <br/>

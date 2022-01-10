@@ -1,10 +1,13 @@
 package com.example.lab3jee;
 
+import com.mysql.cj.protocol.Resultset;
+import javax.annotation.Resource;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.*;
 
 @WebServlet(name = "MySelfServlet", value = "/MySelfServlet")
 public class MySelfServlet extends HttpServlet {
@@ -32,6 +35,54 @@ public class MySelfServlet extends HttpServlet {
 
         out.println("</div></body></html>");
 
+        try
+        {
+            connectDB(out);
+        }
+        catch (ClassNotFoundException e)
+        {
+            e.printStackTrace();
+        }
+
+    }
+
+    public void connectDB(PrintWriter out) throws ClassNotFoundException
+    {
+        try
+        {
+            Class.forName("com.mysql.jdbc.Driver");
+            String dbURL = "jdbc:mysql://localhost:3306/lab584";
+            String user = "root";
+            String pass = "";
+
+            Connection conn = DriverManager.getConnection(dbURL, user, pass);
+
+            String sql = "SELECT * FROM user";
+
+            if (conn != null)
+            {
+                DatabaseMetaData dm = conn.getMetaData();
+                System.out.println("Driver name: " + dm.getDriverName());
+                System.out.println("Driver version: " + dm.getDriverVersion());
+                System.out.println("Product name: " + dm.getDatabaseProductName());
+                System.out.println("Product version: " + dm.getDatabaseProductVersion());
+
+                Statement statement = conn.createStatement();
+                ResultSet res = statement.executeQuery(sql);
+
+                while (res.next())
+                {
+                    out.println("<h1>" + "Name : " + res.getString("name") + "</h1>");
+                    out.println("<h1>" + "Age : " + res.getString("age") + "</h1>");
+                    out.println("<h1>" + "Hobbies : " + res.getString("hobbies") + "</h1>");
+                }
+            }
+
+        }
+        catch (SQLException ex)
+        {
+            ex.printStackTrace();
+        }
     }
 
     @Override
