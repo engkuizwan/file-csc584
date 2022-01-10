@@ -1,6 +1,6 @@
 package com.example.lab3jee;
 
-import com.mysql.cj.protocol.Resultset;
+
 import javax.annotation.Resource;
 import javax.servlet.*;
 import javax.servlet.http.*;
