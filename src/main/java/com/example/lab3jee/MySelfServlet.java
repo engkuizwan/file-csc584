@@ -55,9 +55,9 @@ public class MySelfServlet extends HttpServlet {
         try
         {
             Class.forName("com.mysql.jdbc.Driver");
-            String dbURL = "jdbc:mysql://us-cdbr-east-05.cleardb.net:3306/heroku_2c2129cf1be5740";
-            String user = "b3c003ae765976";
-            String pass = "99b501e8";
+            String dbURL = "jdbc:mysql://localhost:3306/labcsc584";
+            String user = "root";
+            String pass = "rootpassword";
 
             Connection conn = DriverManager.getConnection(dbURL, user, pass);
 
@@ -95,7 +95,8 @@ public class MySelfServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
-        String names[] = {"1234567890", "0987654321", "werfwerwe", "xhetalkdh", "khjbwdvkw"};
+
+        PrintWriter out = response.getWriter();
 
         String id = UUID.randomUUID().toString();
         String name = request.getParameter("myName");
@@ -106,7 +107,7 @@ public class MySelfServlet extends HttpServlet {
 
         registerjdbc rdbc = new registerjdbc();
         String result = rdbc.insert(mySelf);
-        response.getWriter().print(result);
+        out.print("<p>" + result + "</p>");
 
     }
 }

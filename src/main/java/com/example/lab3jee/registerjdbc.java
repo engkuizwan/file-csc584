@@ -1,17 +1,16 @@
 package com.example.lab3jee;
 
 import java.sql.Connection;
-import java.sql.Driver;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class registerjdbc
 {
-    private String dbUrl = "jdbc:mysql://us-cdbr-east-05.cleardb.net:3306/heroku_2c2129cf1be5740";
-    private String dbUname = "b3c003ae765976";
-    private String dbPassword = "99b501e8";
-    private String dbDriver = "com.mysql.cj.jdbc.Driver";
+     private String dbUrl = "jdbc:mysql://localhost:3306/labcsc584";
+     private String dbUname = "root";
+     private String dbPassword = "rootpassword";
+     private String dbDriver = "com.mysql.jdbc.Driver";
 
     public void loadDriver(String dbDriver)
     {
@@ -48,8 +47,8 @@ public class registerjdbc
             ps = con.prepareStatement(sql);
             ps.setString(1, mySelf.getId());
             ps.setString(2, mySelf.getMyName());
-            ps.setString(3, mySelf.getMyAge());
-            ps.setString(4, mySelf.getMyHobbies());
+            ps.setString(4, mySelf.getMyAge());
+            ps.setString(3, mySelf.getMyHobbies());
 
             ps.executeUpdate();
         } catch (SQLException e) {
