@@ -21,7 +21,7 @@
 
 <jsp:include page="/MyFamilyServlet"/>
 
-<form name="familyForm" method="post" action="familymessage.jsp"><br/><br/>
+<form name="familyForm" method="post" action="MyFamilyServlet"><br/><br/>
     Father's name : <input type="text" name="myDad"><br/><br/>
     Mother's name : <input type="text" name="myMom"><br/><br/>
     Sibling's name: <input type="text" name="mySibling"><br/><br/>

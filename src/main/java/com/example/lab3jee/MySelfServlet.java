@@ -1,7 +1,6 @@
 package com.example.lab3jee;
 
 
-import javax.annotation.Resource;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
@@ -105,7 +104,9 @@ public class MySelfServlet extends HttpServlet {
 
         MySelf mySelf = new MySelf(id,name,age,hobbies);
 
-        registerjdbc rdbc = new registerjdbc();
+
+
+        myselfdao rdbc = new myselfdao();
         String result = rdbc.insert(mySelf);
         out.print("<p>" + result + "</p>");
 

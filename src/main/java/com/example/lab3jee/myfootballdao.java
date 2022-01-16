@@ -5,12 +5,12 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-public class registerjdbc
+public class myfootballdao
 {
-     private String dbUrl = "jdbc:mysql://localhost:3306/labcsc584";
-     private String dbUname = "root";
-     private String dbPassword = "rootpassword";
-     private String dbDriver = "com.mysql.jdbc.Driver";
+    private String dbUrl = "jdbc:mysql://localhost:3306/labcsc584";
+    private String dbUname = "root";
+    private String dbPassword = "rootpassword";
+    private String dbDriver = "com.mysql.jdbc.Driver";
 
     public void loadDriver(String dbDriver)
     {
@@ -35,20 +35,21 @@ public class registerjdbc
     }
 
 
-    public String insert(MySelf mySelf)
+    public String insert(MyFootball myFootball)
     {
         loadDriver(dbDriver);
         Connection con = getConnection();
         String result = "Data entered successfully";
-        String sql = "insert into user values(?,?,?,?)";
+        String sql = "insert into bola values(?,?,?,?,?)";
 
         PreparedStatement ps;
         try {
             ps = con.prepareStatement(sql);
-            ps.setString(1, mySelf.getId());
-            ps.setString(2, mySelf.getMyName());
-            ps.setString(4, mySelf.getMyAge());
-            ps.setString(3, mySelf.getMyHobbies());
+            ps.setString(1, myFootball.getMyTeam());
+            ps.setString(2, myFootball.getMyCoach());
+            ps.setString(3, myFootball.getMyPlayer());
+            ps.setString(4, myFootball.getMyFormation());
+            ps.setString(5, myFootball.getMyPosition());
 
             ps.executeUpdate();
         } catch (SQLException e) {
@@ -58,6 +59,4 @@ public class registerjdbc
         }
         return result;
     }
-
 }
-

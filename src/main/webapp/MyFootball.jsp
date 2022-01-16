@@ -20,7 +20,7 @@
 </h1>
 <jsp:include page="/MyFootballServlet"/>
 
-<form name="footballForm" method="post" action="footballmessage.jsp">
+<form name="footballForm" method="post" action="MyFootballServlet">
 
     Favourite Team : <input type="text" name="myTeam"><br/><br/>
     Favourite Coach : <input type="text" name="myCoach"><br/><br/>

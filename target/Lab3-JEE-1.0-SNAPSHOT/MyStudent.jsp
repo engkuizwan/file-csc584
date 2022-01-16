@@ -19,7 +19,7 @@
 </h1>
 <jsp:include page="/MyStudentsServlet"/>
 
-<form name="studentForm" method="post" action="mystudentmessage.jsp">
+<form name="studentForm" method="post" action="MyStudentsServlet">
 
     Campus : <input type="text" name="myCampus"><br/><br/>
     Matric No. : <input type="text" name="myMatric"><br/><br/>
