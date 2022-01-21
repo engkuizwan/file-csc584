@@ -19,9 +19,9 @@
 
 
 
-<jsp:include page="/MyFamilyServlet"/>
+<%--<jsp:include page="/MyFamilyServlet"/>--%>
 
-<form name="familyForm" method="post" action="MyFamilyServlet"><br/><br/>
+<form name="familyForm" method="post" action="MyFamily.jsp"><br/><br/>
     Father's name : <input type="text" name="myDad"><br/><br/>
     Mother's name : <input type="text" name="myMom"><br/><br/>
     Sibling's name: <input type="text" name="mySibling"><br/><br/>
@@ -33,15 +33,27 @@
 
 
 <%-- message to user --%>
-<c:if test="${not empty param.error}">
+<c:if test="${ empty param.myDad or empty param.myMom or empty param.mySibling}">
 
-    <c:out value="${param.error}"/>
+    <c:out value="pliss enter all field first"/>
 
 </c:if>
 
-<c:if test="${not empty param.success}">
+<c:if test="${ not empty param.myDad or not empty param.myMom or not empty param.mySibling}">
 
-    <c:out value="${param.success}"/>
+    <c:out value="all field successfully entered!"/>
+
+    <jsp:useBean id="setMyFamilyData" class="com.example.lab3jee.MyFamily">
+
+        <jsp:setProperty name="setMyFamilyData" property="myMyDad" param="myDad"/>
+        <jsp:setProperty name="setMyFamilyData" property="myMom" param="myMom"/>
+        <jsp:setProperty name="setMyFamilyData" property="mySiblings" param="mySibling"/>
+
+    </jsp:useBean>
+
+    <br><p>Dad : <jsp:getProperty name="setMyFamilyData" property="myDad"/> </p>
+    <p>Mom : <jsp:getProperty name="setMyFamilyData" property="myMom"/> </p>
+    <p>Sibling :  <jsp:getProperty name="setMyFamilyData" property="mySiblings"/> </p><br><br>
 
 </c:if>
 

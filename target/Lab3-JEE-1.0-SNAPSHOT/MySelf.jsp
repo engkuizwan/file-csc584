@@ -1,4 +1,5 @@
-<%--
+<%@ page import="com.example.lab3jee.MySelf" %>
+<%@ page import="java.util.UUID" %><%--
   Created by IntelliJ IDEA.
   User: User
   Date: 11/7/2021
@@ -19,9 +20,9 @@
     <%= "MY SELF" %>
 </h1>
 
-<jsp:include page="MySelfServlet"/>
+<%--<jsp:include page="MySelfServlet"/>--%>
 
-<form style="text-align: center" name="MyselfForm" method="post" action="MySelfServlet">
+<form style="text-align: center" name="MyselfForm" method="post" action="MySelf.jsp">
 
     <br/>
     <br/>
@@ -40,18 +41,39 @@
 
 
 
+
 <%-- message to user --%>
-<c:if test="${not empty param.serrmsg}">
+<c:if test="${ empty param.myName or empty param.myAge or empty param.myHobbies}">
 
-    <c:out value="${param.serrmsg}"/>
+    <c:out value="pliss enter all field first"/>
+
+</c:if>
+
+<c:if test="${ not empty param.myName or not empty param.myAge or not empty param.myHobbies}">
+
+    <c:out value="all field successfully entered!"/>
+
+    <jsp:useBean id="setMyselfData" class="com.example.lab3jee.MySelf" >
+
+        <jsp:setProperty name="setMyselfData" property="myName" param="myName"/>
+        <jsp:setProperty name="setMyselfData" property="myAge" param="myAge"/>
+        <jsp:setProperty name="setMyselfData" property="myHobbies" param="myHobbies"/>
+
+    </jsp:useBean>
+
+    <br><p>Name : <jsp:getProperty name="setMyselfData" property="myName"/> </p>
+    <p>Age : <jsp:getProperty name="setMyselfData" property="myAge"/> </p>
+    <p>Hobbies : <jsp:getProperty name="setMyselfData" property="myHobbies"/> </p><br><br>
+
 
 </c:if>
 
-<c:if test="${not empty param.sscssmsg}">
 
-    <c:out value="${param.sscssmsg}"/>
 
-</c:if>
+
+
+
+
 
 
 <%--JSP Declaration--%>
