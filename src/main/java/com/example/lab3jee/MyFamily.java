@@ -1,16 +1,10 @@
 package com.example.lab3jee;
 
-import java.io.Serializable;
-
-public class MyFamily extends MySelf implements MyVehicle, Serializable
+public class MyFamily extends MySelf implements MyVehicle
 {
     public String MyDad;
     public String MyMom;
     public String MySiblings;
-
-    public MyFamily()
-    {}
-
 
     public MyFamily(String id, String MyName, String MyAge, String MyHobbies, String MyDad, String MyMom, String MySiblings )
     {

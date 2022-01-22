@@ -1,15 +1,12 @@
 package com.example.lab3jee;
 
-public class MyFootball extends MySelf  implements MyVehicle, java.io.Serializable
+public class MyFootball extends MySelf  implements MyVehicle
 {
     public String MyTeam;
     public String MyCoach;
     public String MyPlayer;
     public String MyFormation;
     public String MyPosition;
-
-    public MyFootball()
-    {}
 
     public MyFootball(String id, String MyName, String MyAge, String MyHobbies, String myTeam, String myCoach, String myPlayer, String myFormation, String myPosition) {
         super(id, MyName, MyAge, MyHobbies);

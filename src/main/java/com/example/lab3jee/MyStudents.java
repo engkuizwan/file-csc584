@@ -1,13 +1,10 @@
 package com.example.lab3jee;
 
-public class MyStudents extends MySelf implements MyVehicle, java.io.Serializable
+public class MyStudents extends MySelf implements MyVehicle
 {
     public String MyMatricNo;
     public String MyProgramCode;
     public String MyCampus;
-
-    public MyStudents()
-    {}
 
     public MyStudents(String id, String myName, String myAge, String myHobbies, String myMatricNo, String myProgramCode, String myCampus) {
         super(id,myName, myAge, myHobbies);

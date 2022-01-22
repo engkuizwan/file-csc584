@@ -1,16 +1,11 @@
 package com.example.lab3jee;
 
-import java.io.Serializable;
-
-public class MySelf implements MyVehicle, Serializable
+public class MySelf implements MyVehicle
 {
     public String id;
     public String MyName;
     public String MyAge;
     public String MyHobbies;
-
-    public MySelf() {
-    }
 
     public MySelf(String id, String myName, String myAge, String myHobbies) {
         this.id = id;
